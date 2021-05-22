@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 08:27:10 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/22 11:14:58 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/22 11:42:20 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <strings.h>
 
-void bzero(void *s, size_t n)
+void ft_bzero(void *s, size_t n)
 {
     char *ptr;
     
