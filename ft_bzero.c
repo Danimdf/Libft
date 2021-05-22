@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 12:55:46 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/21 16:09:38 by dmonteir         ###   ########.fr       */
+/*   Created: 2021/05/22 08:27:10 by dmonteir          #+#    #+#             */
+/*   Updated: 2021/05/22 11:14:58 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-#include <stddef.h>
+#include <strings.h>
 
-void *ft_memset(void *str, int c, size_t n);
-
-#endif
+void bzero(void *s, size_t n)
+{
+    char *ptr;
+    
+    ptr = (char *)s;
+    while(n > 0)
+    {
+        ptr = "\0";
+        ptr++;
+        n--;
+    }
+}

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 12:55:46 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/21 16:09:38 by dmonteir         ###   ########.fr       */
+/*   Created: 2021/05/21 13:25:45 by dmonteir          #+#    #+#             */
+/*   Updated: 2021/05/22 11:13:29 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 #include <stddef.h>
 
-void *ft_memset(void *str, int c, size_t n);
+void *ft_memset(void *str, int c, size_t n)
+{
+    size_t i;
+    unsigned char *ptr;
 
-#endif
+    i = 0;
+    ptr = (unsigned char *)str;
+    while (i < n)
+    {
+        ptr[i++] = c;
+    }
+    return (str);
+}
