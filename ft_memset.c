@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:25:45 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/22 11:13:29 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/22 12:07:06 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void *ft_memset(void *str, int c, size_t n)
     {
         ptr[i++] = c;
     }
-    return (str);
+    return ((char *)str);
 }
