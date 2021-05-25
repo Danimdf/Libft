@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:34:33 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/25 01:06:26 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:23:46 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void *ft_memmove(void *s1, const void *s2, size_t n)
     str2 = (unsigned char *)s2;
     
     
+    if(str2 == str1)
+        return s1;
+
     if(str2 < str1 && str1 < str2 + n)
     {
         while (0 < n)
@@ -41,7 +44,7 @@ void *ft_memmove(void *s1, const void *s2, size_t n)
             --n;
         }
     }
-    return((char *)s1);
+    return 0;
 }
 
 #include <stdio.h>
