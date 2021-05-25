@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:41:23 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/24 10:42:41 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/24 22:27:57 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <string.h>
 
-void *memccpy(void *s1, const void *s2, int c, size_t n)
+void *ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
     
 }

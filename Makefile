@@ -1,7 +1,7 @@
 GCC = gcc -Wall -Wextra -Werror 
 
 all:
-	$(GCC) ft_bzero.c  
+	$(GCC) ft_memmove.c
 
 run:
 	./a.out

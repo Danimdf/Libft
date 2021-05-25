@@ -6,11 +6,12 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 08:27:10 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/24 16:35:53 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/24 22:03:16 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
+#include <string.h>
 
 void ft_bzero(void *s, size_t n)
 {

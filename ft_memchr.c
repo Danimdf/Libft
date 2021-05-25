@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:38:54 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/24 10:39:22 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/24 22:55:35 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <string.h>
 
-void *memchr(const void *str, int c, size_t n)
+void *ft_memchr(const void *str, int c, size_t n)
 {
     
 }

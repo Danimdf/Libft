@@ -6,12 +6,12 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:25:45 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/22 12:07:06 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/24 22:03:44 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
+#include <string.h>
 
 void *ft_memset(void *str, int c, size_t n)
 {
