@@ -1,5 +1,19 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/26 01:28:57 by dmonteir          #+#    #+#             */
+/*   Updated: 2021/05/26 02:11:21 by dmonteir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void *ft_memset(void *str, int c, size_t n);
 
@@ -32,15 +46,13 @@ int main ()
    return(0);
 }
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-char* msg = "This is the string: not copied";
+
 
 int main( void )
 {
     char buffer[80];
+    char* msg = "This is the string: not copied";
 
     memset( buffer, '\0', 80 );
     ft_memccpy( buffer, msg, ':', 80 );
@@ -72,8 +84,6 @@ int main ()
 }
 
 
-#include <stdio.h>
-#include <string.h>
 
 int main () {
    char str1[15];

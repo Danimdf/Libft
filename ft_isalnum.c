@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:13:39 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/25 23:22:57 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/26 11:50:54 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int isalnum(int c)
+int ft_isalnum(int c)
 {
     if(c >= '0' && <= '9')
         return (1);

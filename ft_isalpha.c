@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:01:49 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/25 23:23:28 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/26 11:50:30 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int isalpha(int c)
+int ft_isalpha(int c)
 {
     if(c >= 'A' && c <= 'Z')
         return (1);

@@ -6,13 +6,13 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 23:25:44 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/25 23:28:01 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/26 11:50:13 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int isascii(int c)
+int ft_isascii(int c)
 [
     if (c >= 0 && c <= 127)
         return (1);
