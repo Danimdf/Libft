@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 10:41:23 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/25 13:16:55 by dmonteir         ###   ########.fr       */
+/*   Created: 2021/05/25 14:00:25 by dmonteir          #+#    #+#             */
+/*   Updated: 2021/05/25 14:34:24 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-void *ft_memccpy(void *dest, const void *src, int c, size_t n)
+size_t ft_strlen(const char *str)
 {
-    size_t i;
-    unsigned char *dst1;
-    unsigned char *src2;
+    size_t len;
 
-    i = 0;
-    dst1 = (unsigned char *)dest;
-    src2 = (unsigned char *)src;
+    len = 0;
 
-    while(i < n)
+    while(str[len] != '\0')
     {
-        dst1[i] = src2[i];
-        if(src2[i] == (unsigned char)c)
-        {
-            return(&dst1[i]);
-        }
-        i++;
+        len++;
     }
-    return (NULL);
+    return (len);
 }
-
