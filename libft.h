@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:55:46 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/26 14:13:21 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/26 17:26:09 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ size_t ft_strlen(const char *str);
 size_t ft_strlcpy(char *dst, const char *src, size_t size);
 size_t ft_strlcat(char *dest, const char *src, size_t size);
 char *ft_strchr(const char *str, int c);
-
+char *ft_strrchr(const char *str, int c);
+char *ft_strnstr(const char *big, const char *little, size_t len);
+int ft_strncmp(const char *str1, const char *str2, size_t n);
+int ft_atoi(const char *str);
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
