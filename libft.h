@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:55:46 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/27 17:34:50 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:23:54 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,16 @@ int		ft_tolower(int c);
 
 void	*ft_calloc(size_t nitems, size_t size);
 char	*ft_strdup(const char *str1);
+
+char 	*ft_substr(char const* s, unsigned int start, size_t len);
+char 	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_strtrim(char const *s1, char const *set);
+char 	**ft_split(char const *s, char c);
+char 	*ft_itoa(int n);
+char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void 	ft_putchar_fd(char c, int fd);
+void 	ft_putstr_fd(char *s, int fd);
+void 	ft_putendl_fd(char *s, int fd);
+void 	ft_putnbr_fd(int n, int fd);
 
 #endif

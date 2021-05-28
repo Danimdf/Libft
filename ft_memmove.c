@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:34:33 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/27 15:47:36 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:44:48 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 		}
 	}
 	else
-		ft_memcpy(dest, src, n);
+		ft_memcpy(s1, s2, n);
 	return (str1);
 }

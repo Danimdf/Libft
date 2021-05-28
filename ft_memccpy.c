@@ -6,12 +6,11 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:41:23 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/27 15:00:14 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/28 01:36:24 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {

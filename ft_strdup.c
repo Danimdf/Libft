@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 11:39:59 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/27 16:01:22 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:58:28 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *str1)
 	char	*ptr;
 	size_t	i;
 
-	if (!str)
+	if (!str1)
 		return (NULL);
 	len = ft_strlen(str1);
 	ptr = (char *)malloc(len + 1);
