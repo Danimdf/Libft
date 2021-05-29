@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 12:59:19 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/27 14:44:13 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/29 00:09:07 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (0);
 	if (i == n)
 		return (dest);
-	while ((i < n))
+	while (n > 0)
 	{
 		*s1 = *s2;
 		i++;
+		n--;
 	}
 	return (s1);
 }
