@@ -6,11 +6,25 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 01:34:39 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/29 15:35:44 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/29 16:17:02 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**ft_free_malloc(char **tab)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
 
 static int	ft_countword(char const *s, char c)
 {
@@ -83,6 +97,7 @@ char	**ft_split(char const *s, char c)
 		if (i > j)
 		{
 			tab[k] = ft_strndup(s + j, i - j);
+			ft_free_malloc(tab[k]);
 			k++;
 		}
 	}
