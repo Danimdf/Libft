@@ -6,37 +6,37 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 01:34:39 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/29 01:53:49 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/29 11:14:15 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int    ft_countword(char const *s, char c)
+static int	ft_countword(char const *s, char c)
 {
-    unsigned int    i;
-    int                count;
+	unsigned int	i;
+	int				count;
 
-    i = 0;
-    count = 0;
-    while (s[i])
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i] != '\0')
-            count++;
-        while (s[i] && (s[i] != c))
-            i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && (s[i] != c))
+			i++;
+	}
+	return (count);
 }
 
-static char    *ft_strncpy(char *dst, const char *src, size_t n)
+static char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-    size_t    i;
+	size_t	i;
 
-    i = 0;
-    while (src[i] && i < n)
+	i = 0;
+	while (src[i] && i < n)
     {
         dst[i] = src[i];
         i++;
