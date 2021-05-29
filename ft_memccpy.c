@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:41:23 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/28 01:36:24 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/29 01:14:39 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		dst1[i] = src2[i];
 		if (src2[i] == (unsigned char) c)
 		{
-			return (&dst1[i]);
+			return ((void *)dest + i + 1);
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
