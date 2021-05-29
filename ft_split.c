@@ -6,86 +6,96 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 01:34:39 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/28 22:31:43 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/29 01:45:16 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countword(char const *s, char c)
+static char	**ft_malloc_error(char **tab)
 {
 	unsigned int	i;
-	int				count;
 
 	i = 0;
-	count = 0;
-	while (s[i])
+	while (tab[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] && (s[i] != c))
-			i++;
-	}
-	return (count);
+	free(tab[i]);
+	i++;
+}
+	free(tab);
+	return (NULL);
 }
 
-static char	*ft_strncpy(char *dst, const char *src, size_t n)
+static unsigned int	ft_get_nb_strs(char const *s, char c)
 {
-	size_t	i;
+	unsigned int	i;
+	unsigned int	nb_strs;
 
+	if (!s[0])
+		return (0);
 	i = 0;
-	while (src[i] && i < n)
-	{
-		dst[i] = src[i];
+	nb_strs = 0;
+	while (s[i] && s[i] == c) //c가 제일 앞에, 여러 개 연속으로 있을 때 패스
 		i++;
-	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
-}
-
-static char	*ft_strndup(const char *s, size_t n)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * n + 1);
-	if (str == NULL)
-		return (NULL);
-	str = ft_strncpy(str, s, n);
-	str[n] = '\0';
-	return (str);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int			i;
-	int			j;
-	int			k;
-	char		**tab;
-
-	i = 0;
-	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c)) + 1);
-	if (tab == NULL)
-		return (NULL);
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		j = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > j)
+		while (s[i])
 		{
-			tab[k] = ft_strndup(s + j, i - j);
-			k++;
-		}
-	}
-	tab[k] = NULL;
-	return (tab);
-}
+			if (s[i] == c)
+			{
+				nb_strs++;
+    			while (s[i] && s[i] == c)
+    				i++;
+    			continue ;
+    		}
+    		i++;
+    	}
+    	if (s[i - 1] != c)
+    		nb_strs++; //마지막이 c로 안 끝났으면 +1
+    	return (nb_strs);
+    }
+
+    static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
+    					char c)
+    {
+    	unsigned int i;
+
+    	*next_str += *next_str_len; //실제 next_str 주소 ++
+    	*next_str_len = 0;
+    	i = 0;
+    	while (**next_str && **next_str == c)
+    		(*next_str)++;
+    	while ((*next_str)[i]) //갯수 샐 때는 지역변수 i 이용
+    	{
+    		if ((*next_str)[i] == c)
+    			return ;
+    		(*next_str_len)++;
+    		i++;
+    	}
+    }
+
+    char				**ft_split(char const *s, char c)
+    {
+    	char			**tab;
+    	char			*next_str;
+    	unsigned int	next_str_len;
+    	unsigned int	nb_strs;
+    	unsigned int	i;
+
+    	if (!s)
+    		return (NULL);
+    	nb_strs = ft_get_nb_strs(s, c);
+    	if (!(tab = (char **)malloc(sizeof(char *) * (nb_strs + 1)))) //마지막 tab[i]에도 NULL보장
+    		return (NULL);
+    	i = 0;
+    	next_str = (char *)s;
+    	next_str_len = 0;
+    	while (i < nb_strs)
+    	{
+    		ft_get_next_str(&next_str, &next_str_len, c);
+    		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+    			return (ft_malloc_error(tab));
+    		ft_strlcpy(tab[i], next_str, next_str_len + 1);
+    		i++;
+    	}
+    	tab[i] = NULL;
+    	return (tab);
+    }
