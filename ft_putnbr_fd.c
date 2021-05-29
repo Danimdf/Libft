@@ -6,15 +6,15 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:05:50 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/05/28 15:10:28 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/05/28 23:01:58 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int number;
+	unsigned int	number;
 
 	if (n < 0)
 	{
