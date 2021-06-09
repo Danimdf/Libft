@@ -38,4 +38,4 @@ rebonus:
 		$(MAKE) fclean
 		$(MAKE) bonus
 
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: all clean fclean re
