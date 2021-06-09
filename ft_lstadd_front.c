@@ -6,15 +6,15 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:15:31 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/06/04 15:56:48 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/06/08 23:43:14 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *ptr;
+	t_list	*ptr;
 
 	ptr = *lst;
 	*lst = new;
