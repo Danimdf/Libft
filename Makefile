@@ -21,11 +21,11 @@ $(NAME):$(OBJ)
 $(OBJ): $(FILES)
 		$(CC) $(CFLAGS) -c $(FILES)
 
-bonus: $(NAME)
-$(NAME): $(OBJ_BONUS)
+bonus: $(OBJ_BONUS) $(NAME)
 		ar -rcs $(NAME) $(OBJ_BONUS)
 clean:
 		rm -f $(OBJ)
+		rm -f $(OBJ_BONUS)
 
 fclean: clean
 		rm -f $(NAME)
@@ -38,4 +38,4 @@ rebonus:
 		$(MAKE) fclean
 		$(MAKE) bonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus rebonus
