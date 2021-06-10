@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 18:16:43 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/06/10 13:59:28 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:11:43 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		i;
+	char			*sub;
+	unsigned int	i;
 
 	if (!s)
 		return (NULL);
