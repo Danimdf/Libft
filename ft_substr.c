@@ -6,7 +6,7 @@
 /*   By: dmonteir <dmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 18:16:43 by dmonteir          #+#    #+#             */
-/*   Updated: 2021/06/10 12:22:48 by dmonteir         ###   ########.fr       */
+/*   Updated: 2021/06/10 12:26:40 by dmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!(sub))
 		return (NULL);
-	ft_strlcpy (substr, s + start, len + 1);
+	ft_strlcpy (sub, s + start, len + 1);
 	return (sub);
 }
