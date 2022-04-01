@@ -1,73 +1,103 @@
 NAME = libft.a
+SEP ="\n\e[0;36m--------------------------------------------------------\e[0m\n"
 CC = gcc
 CFLAGS =  -Wall -Wextra -Werror -g
-INCLUDE = ./includes/libft.h
-FILES =			./Sources/ft_memset.c \
-				./Sources/ft_bzero.c \
-				./Sources/ft_memcpy.c \
-				./Sources/ft_memccpy.c \
-				./Sources/ft_memmove.c \
-				./Sources/ft_memchr.c \
-				./Sources/ft_memcmp.c \
-				./Sources/ft_strlen.c \
-				./Sources/ft_strlcpy.c \
-				./Sources/ft_strlcat.c \
-				./Sources/ft_strchr.c \
-				./Sources/ft_strrchr.c \
-				./Sources/ft_strnstr.c \
-				./Sources/ft_strncmp.c \
-				./Sources/ft_atoi.c \
-				./Sources/ft_isalpha.c \
-				./Sources/ft_isdigit.c \
-				./Sources/ft_isalnum.c \
-				./Sources/ft_isascii.c \
-				./Sources/ft_isprint.c \
-				./Sources/ft_toupper.c \
-				./Sources/ft_tolower.c \
-				./Sources/ft_calloc.c \
-				./Sources/ft_strdup.c \
-				./Sources/ft_substr.c \
-				./Sources/ft_strjoin.c \
-				./Sources/ft_strtrim.c \
-				./Sources/ft_split.c \
-				./Sources/ft_itoa.c \
-				./Sources/ft_strmapi.c \
-				./Sources/ft_putchar_fd.c \
-				./Sources/ft_putstr_fd.c \
-				./Sources/ft_putendl_fd.c \
-				./Sources/ft_putnbr_fd.c \
+CCLIB	= ar rcs
+FILES =			ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memccpy.c \
+				ft_memmove.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memset.c \
+				ft_strlen.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strnstr.c \
+				ft_strncmp.c \
+				ft_atoi.c \
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
 
-FILES_BONUS =	./Sources/ft_lstnew.c \
-				./Sources/ft_lstadd_front.c \
-				./Sources/ft_lstsize.c \
-				./Sources/ft_lstlast.c \
-				./Sources/ft_lstadd_back.c \
-				./Sources/ft_lstdelone.c \
-				./Sources/ft_lstclear.c \
-				./Sources/ft_lstiter.c \
-				./Sources/ft_lstmap.c \
+FILES_BONUS =	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c \
 
-OBJ = $(FILES:.c=.o)
-OBJ_BONUS = $(FILES_BONUS:.c=.o)
+OBJ	= $(FILES:.c=.o)
+OBJ_BONUS	= $(FILES_BONUS:.c=.o)
+OBJ_DIR	= $(addprefix obj/, $(OBJ))
+OBJ_DIR_B	= $(addprefix obj/, $(OBJ_BONUS))
 
-all:		$(NAME) $(INCLUDE)
+VPATH	= Sources
 
-$(NAME):	$(OBJ)
-			ar rcs $(CC) $(CFLAGS) $(NAME) $(OBJ) -c $(NAME)
+### Extra configurations
+RM		= rm -f
 
-bonus:		$(OBJ_BONUS) $(NAME)
-			ar rcs $(CC) $(OBJ_BONUS)
+TEST	= test
+
+LFLAG	= -L. -lft
+
+### Git configurations
+MSG = Update
+ADD = .
+
+### Default goal
+.DEFAULT_GOAL	= all
+
+### Rules
+obj/%.o: %.c
+			$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME):	$(OBJ_DIR)
+			$(CCLIB) $(NAME) $(OBJ_DIR)
+
+all:		$(NAME)
+
+bonus: 		$(OBJ_DIR_B)
+			$(CCLIB) $(NAME) $(OBJ_DIR_B)
 
 clean:
-			rm -f $(OBJ)
-			rm -f $(OBJ_BONUS)
+			$(RM) $(OBJ_DIR)
 
 fclean:		clean
-			rm -f $(NAME)
-
+			$(RM) $(NAME) $(OBJ_DIR_B)
 re:			fclean all
 
-rebonus:
-			fclean bonus
+rebonus:	fclean bonus
 
-.PHONY: all clean fclean re bonus rebonus
+git: fclean
+	git status
+	@echo $(SEP)
+	git add $(ADD)
+	@echo $(SEP)
+	git commit
+	@echo $(SEP)
+	git status
+
+.PHONY:		all clean fclean re
